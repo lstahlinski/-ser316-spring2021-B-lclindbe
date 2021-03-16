@@ -8,8 +8,6 @@ import org.junit.runners.Parameterized.Parameters;
 import java.lang.reflect.Constructor;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
 //import main.java.BearWorkshop;
 
@@ -71,7 +69,7 @@ public class GivenBlackBox {
         fight1.setEnvironment(Environment.Weather.sunny);
         Attack attack = new Attack(80, "Ground");
         
-        //Calculation: 80 * 1 * 1 - 65 * 1 *1
+        //Calculation: 80 * 1 * 1 - 65 * 1 *1 == 15
         // 80 put into attack manually, no weather bonuses on either side, Ralphi has 65 defense
         
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
