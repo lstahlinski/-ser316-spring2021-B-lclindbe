@@ -101,8 +101,6 @@ public class GivenBlackBox {
         assertEquals(damage, 56, 0.2);
     }
 
-
-
     /**
      * Test Scenario # 1 - Initial pAttackDamage is 0
      * @throws Exception 
@@ -286,9 +284,7 @@ public class GivenBlackBox {
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
         assertEquals(damage, 80, 0.2);
-    }
-
-   
+    }  
 
 
 
@@ -309,7 +305,7 @@ public class GivenBlackBox {
 
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
-        assertEquals(damage, 105, 0.2);
+        assertEquals(damage, 120, 0.2);
     }
 
     /**
