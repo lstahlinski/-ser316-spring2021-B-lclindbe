@@ -122,7 +122,7 @@ public class BattleScenario {
       * Type bonus: Certain monsters have an attack bonus against others:
       *     Fire against Water: Water gains 25% while Fire looses 25%
       *     Fire against Ground: Fire gains 25% while Ground looses 25%
-      *     Ground against Water: Ground gains 25% while Fire looses 25%
+      *     Ground against Water: Ground gains 25% while Water looses 25%
       *     Normal mon: never gain any type bonus and are weaker during droughts.
       * These bonuses do not stack up, they are just applied for every attack. 
       * @param pAttack is the attack value given to the method where that attack value is based on the 
