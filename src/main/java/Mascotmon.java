@@ -88,6 +88,7 @@ public class Mascotmon {
                 } else {
                     _desc = " uses Aqua Cannon";
                     attack = new Attack(stats.attack, "Water");
+                    stats.attack *= 1.2;
                 }
                 break;
             case RALPHIE:
@@ -98,6 +99,7 @@ public class Mascotmon {
                 } else if (attackNumber == 1) {
                     _desc = " uses Ground Stomp";
                     attack = new Attack(stats.attack, "Ground");
+                    stats.attack *= 1.2;
                 } else if (attackNumber == 2) {
                     _desc = " uses Headbutt";
                     attack = new Attack(stats.attack, "Normal");
@@ -114,6 +116,7 @@ public class Mascotmon {
                 } else if (attackNumber == 1) {
                     _desc = " uses Inferno";
                     attack = new Attack(stats.attack, "Fire");
+                    stats.attack *= 1.2;
                 } else if (attackNumber == 2) {
                     _desc = " uses Quick Attack";
                     attack = new Attack(stats.attack, "Normal");
@@ -132,6 +135,7 @@ public class Mascotmon {
                 } else if (attackNumber == 1) {
                     _desc = " uses Body Slam";
                     attack = new Attack(stats.attack, "Normal");
+                    stats.attack *= 1.2;
                 } else if (attackNumber == 2) {
                     _desc = " uses Splash";
                     attack = new Attack(stats.attack, "Water");
