@@ -10,15 +10,18 @@ import java.util.Arrays;
 import java.util.Collection;
 import static org.junit.Assert.*;
 
-@RunWith(Parameterized.class)
+//@RunWith(Parameterized.class)
 public class calculateDamageTest {
-    
+    /*
     private Class<BattleScenario> classUnderTest;
 
     @SuppressWarnings("unchecked")
     public calculateDamageTest(Object classUnderTest) {
         this.classUnderTest = (Class<BattleScenario>) classUnderTest;
     }
+
+    
+    private method<calculateDamage> methodUnderTest; 
 
     @Parameters
     public static Collection<Object[]> courseGradesUnderTest() {
@@ -33,23 +36,25 @@ public class calculateDamageTest {
         return Arrays.asList(classes);
     }
 
-
+    
 
     private BattleScenario createBattleScenario(Mascotmon a, Mascotmon d) throws Exception {
-        Constructor<BattleScenario> constructor = classUnderTest.getConstructor(Mascotmon.class, Mascotmon.class);
+        
+        Constructor<BattleScenario> constructor = calculateDamage(Mascotmon.class, Mascotmon.class);
         System.out.println(constructor);
         return constructor.newInstance(a, d);
     } 
     
+    */
     @Before
     public void setUp() throws Exception {
         
     }
-
+    
     @After
     public void tearDown() throws Exception {
     }
-
+    
     /**
      * Test Scenario # 1 - Initial pAttackDamage is 0
      * @throws Exception 
@@ -60,13 +65,16 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.RALPHIE);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1); 
         System.out.println("    initialAttackDamange");
         fight1.setEnvironment(Environment.Weather.sunny);
+
         Attack attack = new Attack(0, "None");
 
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
+        
+
         assertEquals(damage, 0, 0.2);       
     }
 
@@ -80,14 +88,14 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.RALPHIE);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1);
         System.out.println("    negtiveAttack");
         fight1.setEnvironment(Environment.Weather.sunny);
         Attack attack = new Attack(20, "Normal");
 
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
-        assertEquals(damage, -20, 0.2);
+        assertEquals(damage, 1, 0.2);
     }
 
     /**
@@ -100,12 +108,13 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight3 = new BattleScenario(attacker1, defender1);
         System.out.println("    positiveAttack");
-        fight1.setEnvironment(Environment.Weather.drought);
+        fight3.setEnvironment(Environment.Weather.drought);
         Attack attack = new Attack(80, "Normal");
+        System.out.println("Defender Defense: " + defender1.weatherBonus);
 
-        double damage = fight1.calculateDamage(attack, attacker1, defender1);
+        double damage = fight3.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
         assertEquals(damage, 50, 0.2);
     }
@@ -121,7 +130,7 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1); 
         System.out.println("    sunnywithFire");
         fight1.setEnvironment(Environment.Weather.sunny);
         Attack attack = new Attack(70, "Fire");
@@ -142,7 +151,7 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.ALBERT);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1); 
         System.out.println("    sunnywithWater");
         fight1.setEnvironment(Environment.Weather.sunny);
         Attack attack = new Attack(60, "Water");
@@ -163,7 +172,7 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1); 
         System.out.println("    droughtwithNormal");
         fight1.setEnvironment(Environment.Weather.drought);
         Attack attack = new Attack(70, "Fire");
@@ -183,7 +192,7 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.RALPHIE);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.SPARKY);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1); 
         System.out.println("   droughtwithGround");
         fight1.setEnvironment(Environment.Weather.drought);
         Attack attack = new Attack(80, "Ground");
@@ -204,7 +213,7 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.BULLY);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.SPARKY);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1); 
         System.out.println("   rainywithFire");
         fight1.setEnvironment(Environment.Weather.rainy);
         Attack attack = new Attack(80, "Normal");
@@ -225,7 +234,7 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.ALBERT);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1);
         System.out.println("   rainywithWater");
         fight1.setEnvironment(Environment.Weather.rainy);
         Attack attack = new Attack(80, "Water");
@@ -247,7 +256,7 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.RALPHIE);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1);
         System.out.println("    groundVsWater");
         fight1.setEnvironment(Environment.Weather.drought);
         Attack attack = new Attack(80, "Ground");
@@ -267,7 +276,7 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.RALPHIE);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1);
         System.out.println("    firevsGround");
         fight1.setEnvironment(Environment.Weather.sunny);
         Attack attack = new Attack(80, "Fire");
@@ -287,7 +296,7 @@ public class calculateDamageTest {
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
         
-        BattleScenario fight1 = createBattleScenario(attacker1, defender1); 
+        BattleScenario fight1 = new BattleScenario(attacker1, defender1);; 
         System.out.println("    firevsWater");
         fight1.setEnvironment(Environment.Weather.drought);
         Attack attack = new Attack(80, "Fire");
