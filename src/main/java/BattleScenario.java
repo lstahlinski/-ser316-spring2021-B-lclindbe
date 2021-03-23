@@ -6,6 +6,9 @@ public class BattleScenario {
     Stats mon2Stats;
     Environment battleWeather;
     double totalAttack;
+    Environment.Weather sunnyTest;
+    Environment.Weather droughtTest;
+    Environment.Weather raintTest; 
  
 
     public BattleScenario(Mascotmon pMon1, Mascotmon pMon2) {
@@ -134,85 +137,178 @@ public class BattleScenario {
       * to calculate damage output.
       * @return total damage output
       */
+    
     public double calculateDamage(Attack pAttack, Mascotmon pAttacker, Mascotmon pDefender) {
         pAttacker.weatherBonus = 1;
         pAttacker.typeBonus = 1;
         pDefender.typeBonus =1; 
-        //pDefender.weatherBonus =1;
+        pDefender.weatherBonus =1;
 
-        totalAttack = (pAttack.damage*pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense*pDefender.weatherBonus*pDefender.typeBonus);
-        /*
 
-        if (pAttacker.name == Mascotmon.Name.ALBERT){
-            totalAttack = (pAttack.damage * pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*pDefender.typeBonus);
+        // totalAttack = (pAttack.damage*pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense*pDefender.weatherBonus*pDefender.typeBonus);
+        
+        
+        if (pAttack.damage == 0){
+            totalAttack = 0; 
+            return Math.round(totalAttack * 0.2);
+        }
+        
+        else if (pAttacker.name == Mascotmon.Name.ALBERT){
+            if (battleWeather.WEATHER == Environment.Weather.sunny){
+                pAttacker.weatherBonus = 0.75;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.rainy){
+                pAttacker.weatherBonus = 1.25;
+            }
+            if (battleWeather.WEATHER == Environment.Weather.sunny && pDefender.name == Mascotmon.Name.SPARKY){
+                pDefender.weatherBonus = 1.25;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.rainy && pDefender.name == Mascotmon.Name.SPARKY){
+                pDefender.weatherBonus = 0.75;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.drought && pDefender.name == Mascotmon.Name.RALPHIE){
+                pDefender.weatherBonus = 1.25;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.drought && pDefender.name == Mascotmon.Name.BULLY){
+                pDefender.weatherBonus = 0.75;
+            }
+            
+            
             if (pAttack.type == "Water"){
                 pAttacker.typeBonus = 1.2;
             }
             else {
                 pAttacker.typeBonus = 1; 
             }
+
+            totalAttack = (pAttack.damage * pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*pDefender.typeBonus);
+
             if (pDefender.name == Mascotmon.Name.SPARKY){
                 totalAttack = (pAttack.damage * pAttacker.weatherBonus*1.25*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*0.75*pDefender.typeBonus); 
             }
             else if (pDefender.name == Mascotmon.Name.RALPHIE){
                 totalAttack = (pAttack.damage * pAttacker.weatherBonus*0.75*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*1.25*pDefender.typeBonus);
             }
-            
-     
+            return Math.round(totalAttack * 0.2);
             
         }
         else if (pAttacker.name == Mascotmon.Name.RALPHIE){
             totalAttack = (pAttack.damage * pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*pDefender.typeBonus);
+            
+            if (battleWeather.WEATHER == Environment.Weather.drought){
+                pAttacker.weatherBonus = 1.25;
+            }
+
+            if (battleWeather.WEATHER == Environment.Weather.sunny && pDefender.name == Mascotmon.Name.SPARKY){
+                pDefender.weatherBonus = 1.25;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.rainy && pDefender.name == Mascotmon.Name.SPARKY){
+                pDefender.weatherBonus = 0.75;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.rainy && pDefender.name == Mascotmon.Name.ALBERT){
+                pDefender.weatherBonus = 1.25;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.drought && pDefender.name == Mascotmon.Name.BULLY){
+                pDefender.weatherBonus = 0.75;
+            }
             if (pAttack.type == "Ground"){
                 pAttacker.typeBonus = 1.2;
             }
             else {
                 pAttacker.typeBonus = 1; 
             }
+            totalAttack = (pAttack.damage * pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*pDefender.typeBonus);
             if (pDefender.name == Mascotmon.Name.ALBERT){
                 totalAttack = (pAttack.damage * pAttacker.weatherBonus*1.25*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*0.75*pDefender.typeBonus); 
             }
             else if (pDefender.name == Mascotmon.Name.SPARKY){
                 totalAttack = (pAttack.damage * pAttacker.weatherBonus*0.75*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*1.25*pDefender.typeBonus);
             }
-  
+            return Math.round(totalAttack * 0.2);
+        
         }
+        
         else if (pAttacker.name == Mascotmon.Name.SPARKY){
-            totalAttack = (pAttack.damage * pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*pDefender.typeBonus);
+            //totalAttack = (pAttack.damage * pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*pDefender.typeBonus);
+            
+            if (battleWeather.WEATHER == Environment.Weather.sunny){
+                pAttacker.weatherBonus = 1.25;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.rainy){
+                pAttacker.weatherBonus = 0.75;
+            }
+            if (battleWeather.WEATHER == Environment.Weather.sunny && pDefender.name == Mascotmon.Name.ALBERT){
+                pDefender.weatherBonus = 0.75;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.rainy && pDefender.name == Mascotmon.Name.ALBERT){
+                pDefender.weatherBonus = 1.75;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.drought && pDefender.name == Mascotmon.Name.RALPHIE){
+                pDefender.weatherBonus = 1.25;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.drought && pDefender.name == Mascotmon.Name.BULLY){
+                pDefender.weatherBonus = 0.75;
+            }
+
             if (pAttack.type == "Fire"){
                 pAttacker.typeBonus = 1.2;
             }
             else {
                 pAttacker.typeBonus = 1; 
             }
+
+            totalAttack = (pAttack.damage * pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*pDefender.typeBonus);
             if (pDefender.name == Mascotmon.Name.RALPHIE){
                 totalAttack = (pAttack.damage * pAttacker.weatherBonus*1.25*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*0.75*pDefender.typeBonus); 
             }
             else if (pDefender.name == Mascotmon.Name.ALBERT){
                 totalAttack = (pAttack.damage * pAttacker.weatherBonus*0.75*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*1.25*pDefender.typeBonus);
             }
+            return Math.round(totalAttack * 0.2);
    
         } 
         else if (pAttacker.name == Mascotmon.Name.BULLY){
-            totalAttack = (pAttack.damage * pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*pDefender.typeBonus);
+            
+            if (battleWeather.WEATHER == Environment.Weather.drought){
+                pAttacker.weatherBonus = 0.75;
+            }
+         
+            if (battleWeather.WEATHER == Environment.Weather.sunny && pDefender.name == Mascotmon.Name.SPARKY){
+                pDefender.weatherBonus = 1.25;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.rainy && pDefender.name == Mascotmon.Name.SPARKY){
+                pDefender.weatherBonus = 0.75;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.drought && pDefender.name == Mascotmon.Name.RALPHIE){
+                pDefender.weatherBonus = 1.25;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.rainy && pDefender.name == Mascotmon.Name.ALBERT){
+                pDefender.weatherBonus = 1.25;
+            }
+            else if (battleWeather.WEATHER == Environment.Weather.sunny && pDefender.name == Mascotmon.Name.ALBERT){
+                pDefender.weatherBonus = 0.75;
+            }
+            
             if (pAttack.type == "Normal"){
                 pAttacker.typeBonus = 1.2;
             }
             else {
                 pAttacker.typeBonus = 1; 
             }
-            
+            totalAttack = (pAttack.damage * pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*pDefender.typeBonus);
+            return Math.round(totalAttack * 0.2);
         }
         
-        if (pAttack.damage == 0){
-            totalAttack = 0; 
-        }
-        */
-        if (totalAttack < 0){
+        
+        else if (totalAttack < 0){
             totalAttack = 1;
+            return Math.round(totalAttack * 0.2);
         }
 
-        return Math.round(totalAttack * 0.2);
+       else {
+           return Math.round(totalAttack * 0.2);
+
+       }
     }
 
 }

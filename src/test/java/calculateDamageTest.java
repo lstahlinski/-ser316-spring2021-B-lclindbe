@@ -112,7 +112,6 @@ public class calculateDamageTest {
         System.out.println("    positiveAttack");
         fight3.setEnvironment(Environment.Weather.drought);
         Attack attack = new Attack(80, "Normal");
-        System.out.println("Defender Defense: " + defender1.weatherBonus);
 
         double damage = fight3.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
@@ -134,7 +133,7 @@ public class calculateDamageTest {
         System.out.println("    sunnywithFire");
         fight1.setEnvironment(Environment.Weather.sunny);
         Attack attack = new Attack(70, "Fire");
-
+        
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
         assertEquals(damage, 65, 0.2);
@@ -155,7 +154,8 @@ public class calculateDamageTest {
         System.out.println("    sunnywithWater");
         fight1.setEnvironment(Environment.Weather.sunny);
         Attack attack = new Attack(60, "Water");
-
+        System.out.println("Weather" + attacker1.weatherBonus);
+        System.out.println("Type" + attacker1.typeBonus);
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
         assertEquals(damage, 14, 0.2);
