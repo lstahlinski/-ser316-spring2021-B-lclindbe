@@ -85,15 +85,15 @@ public class calculateDamageTest {
     
     @Test
     public void negtiveAttack() throws Exception {
-        Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.RALPHIE);
-        Mascotmon defender1 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon attacker2 = new Mascotmon(Mascotmon.Name.RALPHIE);
+        Mascotmon defender2 = new Mascotmon(Mascotmon.Name.BULLY);
         
-        BattleScenario fight1 = new BattleScenario(attacker1, defender1);
+        BattleScenario fight2 = new BattleScenario(attacker2, defender2);
         System.out.println("    negtiveAttack");
-        fight1.setEnvironment(Environment.Weather.sunny);
+        fight2.setEnvironment(Environment.Weather.sunny);
         Attack attack = new Attack(20, "Normal");
 
-        double damage = fight1.calculateDamage(attack, attacker1, defender1);
+        double damage = fight2.calculateDamage(attack, attacker2, defender2);
         System.out.println("         Damage dealt: " + damage);
         assertEquals(damage, 1, 0.2);
     }
@@ -154,8 +154,7 @@ public class calculateDamageTest {
         System.out.println("    sunnywithWater");
         fight1.setEnvironment(Environment.Weather.sunny);
         Attack attack = new Attack(60, "Water");
-        System.out.println("Weather" + attacker1.weatherBonus);
-        System.out.println("Type" + attacker1.typeBonus);
+
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
         assertEquals(damage, 14, 0.2);
