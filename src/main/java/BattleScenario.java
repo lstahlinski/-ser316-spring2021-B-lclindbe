@@ -153,7 +153,7 @@ public class BattleScenario {
         
         if (pAttack.damage == 0){
             totalAttack = 0; 
-            return Math.round(totalAttack * 0.2);
+            return Math.round(totalAttack);
         }
         
         else if (pAttacker.name == Mascotmon.Name.ALBERT){
@@ -203,18 +203,17 @@ public class BattleScenario {
             
             if (totalAttack < 0){
                 totalAttack = 1;
-                System.out.println("TA: " + totalAttack);
-                return Math.round(totalAttack * 0.2);
+                
+                return Math.round(totalAttack);
             }
             else {
-                System.out.println("TA: " + totalAttack);
-                return Math.round(totalAttack * 0.2);
+                
+                return Math.round(totalAttack);
             }
             
         }
 
         else if (pAttacker.name == Mascotmon.Name.RALPHIE){
-            totalAttack = (pAttack.damage * pAttacker.weatherBonus*pAttacker.typeBonus) - (pDefender.stats.defense * pDefender.weatherBonus*pDefender.typeBonus);
             
             if (battleWeather.WEATHER == Environment.Weather.drought){
                 pAttacker.weatherBonus = 1.25;
@@ -251,13 +250,12 @@ public class BattleScenario {
             
             if (totalAttack < 0){
                 totalAttack = 1;
-                System.out.println("TA: " + totalAttack);
-                return Math.round(totalAttack * 0.2);
+                
+                return Math.round(totalAttack);
             }
             else {
                 
-                System.out.println("TA: " + totalAttack);
-                return Math.round(totalAttack * 0.2);
+                return Math.round(totalAttack);
             }
         
         }
@@ -311,12 +309,12 @@ public class BattleScenario {
             
             if (totalAttack < 0){
                 totalAttack = 1;
-                System.out.println("TA: " + totalAttack);
-                return Math.round(totalAttack * 0.2);
+                
+                return Math.round(totalAttack);
             }
             else {
-                System.out.println("TA: " + totalAttack);
-                return Math.round(totalAttack * 0.2);
+                
+                return Math.round(totalAttack);
             }
    
         } 
@@ -358,19 +356,19 @@ public class BattleScenario {
           
             if (totalAttack < 0){
                 totalAttack = 1;
-                System.out.println("TA: " + totalAttack);
-                return Math.round(totalAttack * 0.2);
+                
+                return Math.round(totalAttack);
             }
             else {
-                System.out.println("TA: " + totalAttack);
-                return Math.round(totalAttack * 0.2);
+                
+                return Math.round(totalAttack);
             }
         }
         
         
        else {
         System.out.println("TA: " + totalAttack);   
-        return Math.round(totalAttack * 0.2);
+        return Math.round(totalAttack);
 
        }
     }

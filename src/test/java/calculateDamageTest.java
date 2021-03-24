@@ -20,9 +20,6 @@ public class calculateDamageTest {
         this.classUnderTest = (Class<BattleScenario>) classUnderTest;
     }
 
-    
-    private method<calculateDamage> methodUnderTest; 
-
     @Parameters
     public static Collection<Object[]> courseGradesUnderTest() {
         Object[][] classes = {
@@ -36,16 +33,13 @@ public class calculateDamageTest {
         return Arrays.asList(classes);
     }
 
-    
-
     private BattleScenario createBattleScenario(Mascotmon a, Mascotmon d) throws Exception {
-        
-        Constructor<BattleScenario> constructor = calculateDamage(Mascotmon.class, Mascotmon.class);
+        Constructor<BattleScenario> constructor = classUnderTest.getConstructor(Mascotmon.class, Mascotmon.class);
         System.out.println(constructor);
         return constructor.newInstance(a, d);
-    } 
-    
+    }
     */
+
     @Before
     public void setUp() throws Exception {
         
@@ -88,16 +82,16 @@ public class calculateDamageTest {
         Mascotmon attacker2 = new Mascotmon(Mascotmon.Name.RALPHIE);
         Mascotmon defender2 = new Mascotmon(Mascotmon.Name.BULLY);
         
-        BattleScenario fight2 = new BattleScenario(attacker2, defender2);
+        BattleScenario fight1 = new BattleScenario(attacker2, defender2);
         System.out.println("    negtiveAttack");
-        fight2.setEnvironment(Environment.Weather.sunny);
+        fight1.setEnvironment(Environment.Weather.sunny);
         Attack attack = new Attack(20, "Normal");
-
-        double damage = fight2.calculateDamage(attack, attacker2, defender2);
+        double damage = fight1.calculateDamage(attack, attacker2, defender2);
         System.out.println("         Damage dealt: " + damage);
         assertEquals(damage, 1, 0.2);
     }
 
+    
     /**
      * Test Scenario # 3 - Positive Attack
      * @throws Exception 
@@ -198,7 +192,7 @@ public class calculateDamageTest {
 
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
-        assertEquals(damage, 80, 0.2);
+        assertEquals(damage, 40, 0.2);
     }
     
 
@@ -282,7 +276,7 @@ public class calculateDamageTest {
 
         double damage = fight1.calculateDamage(attack, attacker1, defender1);
         System.out.println("         Damage dealt: " + damage);
-        assertEquals(damage, 101.25, 0.2);
+        assertEquals(damage, 101, 0.2);
     }
 
     /**
