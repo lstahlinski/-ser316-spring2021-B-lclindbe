@@ -1,3 +1,5 @@
+import java.util.concurrent.ThreadLocalRandom;
+
 public class BattleScenario {
 
     Mascotmon mon1;
@@ -44,8 +46,8 @@ public class BattleScenario {
         System.out.println("Their opponent, on the defending team is " + mon2.name + " " +
                 mon2.description);
         System.out.println(mon2.name + " prepares for the incoming attack");
-
-        Mascotmon winner = fight();
+        // added random attacks to allow for random attacks per round
+        Mascotmon winner = fight(1,1,true);
         System.out.println(winner.name + " has won with " + winner.stats.health + " health left");
     }
 
@@ -54,7 +56,9 @@ public class BattleScenario {
      * Each Mascotmon uses one random attack per round; this attack multiplier is used to calculate 
      * damage output against opposing mascotmon. 
      */
-    public Mascotmon fight() {
+    // Added parameters to allow for testing.
+    // Added randomAttack parameter to allow the game to still be random, but for testing, this will be false
+    public Mascotmon fight(int choosenAttackNumber1, int choosenAttackNumber2, Boolean randomAttack ) {
         int round = 1;
         double damage1;
         double damage2;
@@ -65,10 +69,11 @@ public class BattleScenario {
         while (true) {
             //Mon 1's turn:
             System.out.println("\n" + mon1.name + " launches an attack against " + mon2.name + "!");
-            attack1 = mon1.attack();
-
+            attack1 = mon1.attack(choosenAttackNumber1, randomAttack);
+            
             //Calculate damage:
             damage1 = calculateDamage(attack1, mon1, mon2);
+            
             System.out.println(damage1 + " damage dealt");
 
             //Adjust mon2's health:
@@ -83,8 +88,8 @@ public class BattleScenario {
 
             //Mon 2's turn:
             System.out.println("\n" + mon2.name  + " launches an attack against " + mon1.name + "!");
-            attack2 = mon2.attack();
-
+            attack2 = mon2.attack(choosenAttackNumber2, randomAttack);
+                    
             //Calculate damage:
             damage2 = calculateDamage(attack2, mon2, mon1);
             System.out.println(damage2 + " damage dealt");
@@ -98,6 +103,7 @@ public class BattleScenario {
                 System.out.println(mon1.name + " has fainted in round " + round);
                 return mon2;
             }
+            
             round++;
         } //end while
     }
