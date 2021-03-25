@@ -324,7 +324,7 @@ public class BattleScenario {
             }
    
         } 
-        else if (pAttacker.name == Mascotmon.Name.BULLY){
+        else {
             
             if (battleWeather.WEATHER == Environment.Weather.drought){
                 pAttacker.weatherBonus = 0.75;
@@ -372,11 +372,6 @@ public class BattleScenario {
         }
         
         
-       else {
-        System.out.println("TA: " + totalAttack);   
-        return Math.round(totalAttack);
-
-       }
     }
     
 
