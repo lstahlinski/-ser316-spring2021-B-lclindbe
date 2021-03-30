@@ -1,5 +1,4 @@
+install: gradle wrapper --gradle-version 4.2
+
 language: java
 jdk: openjdk11
-
-script:
- - chmod +x ./gradlew build connectedCheck
