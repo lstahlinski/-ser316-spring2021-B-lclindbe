@@ -22,19 +22,11 @@
 *.zip
 *.tar.gz
 *.rar
+*.gradle/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
 # OS directory artifacts
-.project
-
-.classpath
-
-.settings
-
-.gradle
-/build/
-
 *.DS_Store
 /bin/
