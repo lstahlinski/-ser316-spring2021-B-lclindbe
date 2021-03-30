@@ -37,7 +37,7 @@ test {
 /////////////////////////////////////////////////////////////////////
 apply plugin: 'checkstyle'
 checkstyle {
-    Keep checkstyle a little quieter
+    //Keep checkstyle a little quieter
     ignoreFailures = true
     showViolations = false
 }
