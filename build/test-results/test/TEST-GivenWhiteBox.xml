@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GivenWhiteBox" tests="18" skipped="0" failures="0" errors="0" timestamp="2021-03-30T04:30:22" hostname="LAPTOP-VQ706ALM" time="0.081">
+  <properties/>
+  <testcase name="albertVSRALPHIE" classname="GivenWhiteBox" time="0.0"/>
+  <testcase name="albertVSSparkyRain" classname="GivenWhiteBox" time="0.0"/>
+  <testcase name="albertVSSparkySuny" classname="GivenWhiteBox" time="0.001"/>
+  <testcase name="bullyVSALBERTRAINY" classname="GivenWhiteBox" time="0.003"/>
+  <testcase name="bullyVSALBERTSunny" classname="GivenWhiteBox" time="0.002"/>
+  <testcase name="ralphieVSBully" classname="GivenWhiteBox" time="0.001"/>
+  <testcase name="nodeCoverage" classname="GivenWhiteBox" time="0.06"/>
+  <testcase name="sparkyVSRalphie" classname="GivenWhiteBox" time="0.001"/>
+  <testcase name="bullyVSRALPHIE" classname="GivenWhiteBox" time="0.001"/>
+  <testcase name="bullyVSRALPHIEDrought" classname="GivenWhiteBox" time="0.001"/>
+  <testcase name="bullyVSALBERTDrought" classname="GivenWhiteBox" time="0.0"/>
+  <testcase name="ralphieVSALBERT" classname="GivenWhiteBox" time="0.0"/>
+  <testcase name="edgeCoverageFirst" classname="GivenWhiteBox" time="0.003"/>
+  <testcase name="ralphieVSSparky" classname="GivenWhiteBox" time="0.001"/>
+  <testcase name="bullyVSSPARKY" classname="GivenWhiteBox" time="0.0"/>
+  <testcase name="sparkyVSALBERTRainy" classname="GivenWhiteBox" time="0.001"/>
+  <testcase name="sparkyVSALBERTSunny" classname="GivenWhiteBox" time="0.0"/>
+  <testcase name="albertVSBully" classname="GivenWhiteBox" time="0.001"/>
+  <system-out><![CDATA[    albertVSRALPHIE
+         Damage dealt: 1.0
+    albertVSSparkyRain
+         Damage dealt: 103.0
+    albertVSSparkySunny
+         Damage dealt: 38.0
+    bullyVSAlbertRainy
+         Damage dealt: 30.0
+    bullyVSAlbertSunny
+         Damage dealt: 50.0
+    ralphieVSBully
+         Damage dealt: 70.0
+
+SPARKY launches an attack against RALPHIE!
+Attack value: 70.0
+sparky uses Quick Attack
+61.0 damage dealt
+RALPHIE has 44.0 health left
+
+RALPHIE launches an attack against SPARKY!
+ralphie uses Headbutt
+1.0 damage dealt
+SPARKY has 89.0 health left
+
+SPARKY launches an attack against RALPHIE!
+Attack value: 70.0
+sparky uses Quick Attack
+61.0 damage dealt
+RALPHIE has -17.0 health left
+RALPHIE has fainted in round 2
+    sparkyVSRalphie
+         Damage dealt: 39.0
+    bullyVSRALPHIE
+         Damage dealt: 1.0
+    bullyVSRALPHIEdrought
+         Damage dealt: 1.0
+    bullyVSAlbertDrought
+         Damage dealt: 20.0
+    ralphieVSALBERT
+         Damage dealt: 63.0
+
+RALPHIE launches an attack against SPARKY!
+ralphie uses Headbutt
+1.0 damage dealt
+SPARKY has 89.0 health left
+
+SPARKY launches an attack against RALPHIE!
+Attack value: 70.0
+sparky uses Quick Attack
+61.0 damage dealt
+RALPHIE has 44.0 health left
+
+RALPHIE launches an attack against SPARKY!
+ralphie uses Headbutt
+1.0 damage dealt
+SPARKY has 88.0 health left
+
+SPARKY launches an attack against RALPHIE!
+Attack value: 70.0
+sparky uses Quick Attack
+61.0 damage dealt
+RALPHIE has -17.0 health left
+RALPHIE has fainted in round 2
+    ralphieVSSparky
+         Damage dealt: 23.0
+    bullyVSSPARKY
+         Damage dealt: 30.0
+    sparkyVSALBERTrainy
+         Damage dealt: 1.0
+    sparkyVSALBERTSunny
+         Damage dealt: 38.0
+    albertVSBully
+         Damage dealt: 50.0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

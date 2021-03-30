@@ -1,0 +1,21 @@
+Description.java
+ Description
+Main.java
+ Main
+Environment.java
+ Environment
+ Environment$1
+ Environment$Weather
+BattleScenario.java
+ BattleScenario
+Mascotmon.java
+ Mascotmon
+ Mascotmon$1
+ Mascotmon$Name
+type.java
+ type
+Attack.java
+ Attack
+Stats.java
+ Stats
+ Stats$1

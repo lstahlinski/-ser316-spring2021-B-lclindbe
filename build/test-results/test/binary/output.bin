@@ -1,0 +1,99 @@
+    firevsGround
+         Damage dealt: 101.0
+    firevsWater
+         Damage dealt: 22.0
+   rainywithWater
+         Damage dealt: 80.0
+    initialAttackDamange
+         Damage dealt: 0.0
+   rainywithFire
+         Damage dealt: 66.0
+   droughtwithGround
+         Damage dealt: 40.0
+    negtiveAttack
+         Damage dealt: 1.0
+	    droughtwithNormal
+	         Damage dealt: 54.0
+
+    groundVsWater
+
+         Damage dealt: 120.0
+    sunnywithWater
+         Damage dealt: 14.0
+    sunnywithFire
+         Damage dealt: 65.0
+    positiveAttack
+         Damage dealt: 50.0
+    albertVSRALPHIE
+         Damage dealt: 1.0
+    albertVSSparkyRain
+         Damage dealt: 103.0
+    albertVSSparkySunny
+         Damage dealt: 38.0
+    bullyVSAlbertRainy
+         Damage dealt: 30.0
+    bullyVSAlbertSunny
+         Damage dealt: 50.0
+    ralphieVSBully
+         Damage dealt: 70.0
+
+,SPARKY launches an attack against RALPHIE!
+Attack value: 70.0
+sparky uses Quick Attack
+61.0 damage dealt
+RALPHIE has 44.0 health left
+
+,RALPHIE launches an attack against SPARKY!
+ralphie uses Headbutt
+1.0 damage dealt
+SPARKY has 89.0 health left
+
+,SPARKY launches an attack against RALPHIE!
+Attack value: 70.0
+sparky uses Quick Attack
+61.0 damage dealt
+RALPHIE has -17.0 health left
+ RALPHIE has fainted in round 2
+    sparkyVSRalphie
+         Damage dealt: 39.0
+    bullyVSRALPHIE
+         Damage dealt: 1.0
+    bullyVSRALPHIEdrought
+         Damage dealt: 1.0
+    bullyVSAlbertDrought
+         Damage dealt: 20.0
+    ralphieVSALBERT
+         Damage dealt: 63.0
+
+,RALPHIE launches an attack against SPARKY!
+ralphie uses Headbutt
+1.0 damage dealt
+SPARKY has 89.0 health left
+
+,SPARKY launches an attack against RALPHIE!
+Attack value: 70.0
+sparky uses Quick Attack
+61.0 damage dealt
+RALPHIE has 44.0 health left
+
+,RALPHIE launches an attack against SPARKY!
+ralphie uses Headbutt
+1.0 damage dealt
+SPARKY has 88.0 health left
+
+,SPARKY launches an attack against RALPHIE!
+Attack value: 70.0
+sparky uses Quick Attack
+61.0 damage dealt
+RALPHIE has -17.0 health left
+ RALPHIE has fainted in round 2
+    ralphieVSSparky
+         Damage dealt: 23.0
+    bullyVSSPARKY
+         Damage dealt: 30.0
+    sparkyVSALBERTrainy
+         Damage dealt: 1.0
+    sparkyVSALBERTSunny
+         Damage dealt: 38.0
+     albertVSBully
+          Damage dealt: 50.0

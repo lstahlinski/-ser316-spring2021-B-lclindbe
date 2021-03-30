@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="calculateDamageTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-03-30T04:30:22" hostname="LAPTOP-VQ706ALM" time="0.05">
+  <properties/>
+  <testcase name="firevsGround" classname="calculateDamageTest" time="0.038"/>
+  <testcase name="firevsWater" classname="calculateDamageTest" time="0.001"/>
+  <testcase name="rainywithWater" classname="calculateDamageTest" time="0.001"/>
+  <testcase name="initialAttackDamange" classname="calculateDamageTest" time="0.001"/>
+  <testcase name="rainywithFire" classname="calculateDamageTest" time="0.001"/>
+  <testcase name="droughtwithGround" classname="calculateDamageTest" time="0.001"/>
+  <testcase name="negtiveAttack" classname="calculateDamageTest" time="0.001"/>
+  <testcase name="droughtwithNormal" classname="calculateDamageTest" time="0.001"/>
+  <testcase name="groundVSWater" classname="calculateDamageTest" time="0.001"/>
+  <testcase name="sunnywithWater" classname="calculateDamageTest" time="0.0"/>
+  <testcase name="sunnywithFire" classname="calculateDamageTest" time="0.001"/>
+  <testcase name="positiveAttack" classname="calculateDamageTest" time="0.001"/>
+  <system-out><![CDATA[    firevsGround
+         Damage dealt: 101.0
+    firevsWater
+         Damage dealt: 22.0
+   rainywithWater
+         Damage dealt: 80.0
+    initialAttackDamange
+         Damage dealt: 0.0
+   rainywithFire
+         Damage dealt: 66.0
+   droughtwithGround
+         Damage dealt: 40.0
+    negtiveAttack
+         Damage dealt: 1.0
+    droughtwithNormal
+         Damage dealt: 54.0
+    groundVsWater
+         Damage dealt: 120.0
+    sunnywithWater
+         Damage dealt: 14.0
+    sunnywithFire
+         Damage dealt: 65.0
+    positiveAttack
+         Damage dealt: 50.0
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
