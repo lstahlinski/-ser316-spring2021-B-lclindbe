@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-
+        
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
         Mascotmon attacker2 = new Mascotmon(Mascotmon.Name.BULLY);
