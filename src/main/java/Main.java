@@ -1,10 +1,12 @@
 public class Main {
+    /**
+    * Main class to run battle scenario.
+    */
     public static void main(String[] args) {
         
         Mascotmon attacker1 = new Mascotmon(Mascotmon.Name.SPARKY);
         Mascotmon defender1 = new Mascotmon(Mascotmon.Name.ALBERT);
-        Mascotmon attacker2 = new Mascotmon(Mascotmon.Name.BULLY);
-        Mascotmon defender2 = new Mascotmon(Mascotmon.Name.RALPHIE);
+
         
         //Create First battle scenario with two mons
         BattleScenario fight1 = new BattleScenario(attacker1, defender1); 
@@ -14,11 +16,14 @@ public class Main {
         fight1.initiateBattle();
         System.out.println("This is the end of the training simulation");
 
+        Mascotmon attacker2 = new Mascotmon(Mascotmon.Name.BULLY);
+        Mascotmon defender2 = new Mascotmon(Mascotmon.Name.RALPHIE);
+
         //Create Second battle scenario with two mons
         BattleScenario fight2 = new BattleScenario(attacker2, defender2); 
-//        Set the weather
+        //Set the weather
         fight2.setEnvironment(Environment.Weather.rainy);
-//        Initiate battle
+        //Initiate battle
         fight2.initiateBattle();
         System.out.println("This is the end of the training simulation");
     }
