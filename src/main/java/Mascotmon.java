@@ -2,7 +2,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Mascotmon {
     String description;
-    public String type;
+    String type;
     public Name name;
     public Stats stats;
     public double weatherBonus = 1.0; 
@@ -39,21 +39,19 @@ public class Mascotmon {
         getDescription();
     }
 
-    private void getType() {
-        Type t = new Type(name);
-        this.type = t.type;
+    public void getStats() {
+        stats = new Stats(name);   
     }
 
-    private void getStats() {
-        stats = new Stats(name);
-        
-        
-    }
-
-    private void getDescription() {
+    public void getDescription() {
         Description desc = new Description(name);
         this.description = desc.description;
     }
+
+    public void getType() {
+        Type t = new Type(name);
+        this.type = t.type;
+    } 
 
     /**
      * Method randomly determines an attack to use based on the defending Mascotmon and
@@ -66,7 +64,7 @@ public class Mascotmon {
         
         //double attack_Damage = 0;
         //int attackNumber = 0;
-
+     
         if (randomAttacks == true) {
             while (true) {
                 chosenAttackNumber = ThreadLocalRandom.current().nextInt(0, 4);
@@ -79,12 +77,13 @@ public class Mascotmon {
             }
         }
         
-
+     
         String desc = "";
         Attack attack = null;
-
+  
         switch (name) {
             case ALBERT:
+                this.getType();
                 if (chosenAttackNumber == 0) {
                     desc = " uses Iron Scales, increasing defense stat by 10%";
                     stats.defense *= 1.10;
@@ -101,6 +100,7 @@ public class Mascotmon {
                 }
                 break;
             case RALPHIE:
+                this.getType();
                 if (chosenAttackNumber == 0) {
                     desc = " uses Iron Hide, increasing defense stat by 10%";
                     stats.defense *= 1.10;
@@ -117,6 +117,7 @@ public class Mascotmon {
                 }
                 break;
             case SPARKY:
+                this.getType();
                 if (chosenAttackNumber == 0) {
                     desc = " uses Heat Up, increasing attack stat by 10%";
                     stats.attack *= 1.10;
@@ -127,13 +128,13 @@ public class Mascotmon {
                 } else if (chosenAttackNumber == 2) {
                     desc = " uses Quick Attack";
                     attack = new Attack(stats.attack, "Normal");
-                    System.out.println("Attack value: " + stats.attack);
                 } else if (chosenAttackNumber == 3) {
                     desc = " uses Earthquake";
                     attack = new Attack(stats.attack, "Ground");
                 }
                 break;
             case BULLY:
+                this.getType();
                 if (chosenAttackNumber == 0) {
                     desc = " uses Sleep, increasing health stat by 10%";
                     double health = stats.health * 1.10;
@@ -152,7 +153,7 @@ public class Mascotmon {
                 
         }
             
-        System.out.println(name.toString().toLowerCase() + desc);
+        System.out.println(name.toString().toLowerCase() + desc + " " + type);
         return attack;
     }
 

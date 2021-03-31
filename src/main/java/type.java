@@ -1,24 +1,28 @@
 public class Type {
 
-    String type;
-
+    public String type;
+    
+    /**
+     * Constructor.
+     */
     public Type() {
         type = "Normal";
     }
-
     /**
      * Describe type of monsters. 
      */
     public Type(Mascotmon.Name name) {
-        if (name.equals(Mascotmon.Name.ALBERT)) {
+        String n = name.toString();
+        if (n.equals("ALBERT")) {
             type = "Water";
-        } else if (name.equals(Mascotmon.Name.RALPHIE)) {
-            type = "Ground";
+        } else if (n.equals("RALPHIE")) {
+            type ="Ground";
 
-        } else if (name.equals(Mascotmon.Name.SPARKY)) {
+        } else if (n.equals("SPARKY")) {
             type = "Fire";
         } else {
             type = "Normal";
         }
     }
+
 }

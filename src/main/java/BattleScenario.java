@@ -5,15 +5,12 @@ public class BattleScenario {
     Mascotmon mon1;
     Mascotmon mon2;
     Stats mon1Stats;
-    Stats mon2Stats;
+    //Stats mon2Stats;
     Environment battleWeather;
     double totalAttack;
     double attackervsType;
     double defendervsType;
-    Environment.Weather sunnyTest;
-    Environment.Weather droughtTest;
-    Environment.Weather raintTest; 
- 
+
 
     public BattleScenario(Mascotmon p1Mon, Mascotmon p2Mon) {
         setMon1(p1Mon);
@@ -37,7 +34,7 @@ public class BattleScenario {
 
         // initiate stats for mon1 and mon2
         mon1Stats = new Stats(mon1.name);
-        mon2Stats = new Stats(mon2.name);
+        //mon2Stats = new Stats(mon2.name);
         System.out.println("Woooo: " + mon1Stats.health);
 
         System.out.println("\nWelcome everyone to the Mascotmon training arena!");

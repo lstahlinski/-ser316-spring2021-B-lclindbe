@@ -3,8 +3,8 @@ public class Environment {
     Weather weather1;
     String buffedType;
     String debuffedType;
-    double buffModifier;
-    double debuffModifier;
+    //double buffModifier;
+    //double debuffModifier;
 
     public Environment() {
         this(Weather.neutral);
@@ -15,8 +15,8 @@ public class Environment {
      */
     public Environment(Weather weather) {
         this.weather1 = weather;
-        this.buffModifier = 1.25;
-        this.debuffModifier = 0.75;
+        //this.buffModifier = 1.25;
+        //this.debuffModifier = 0.75;
         switch (weather) {
             case sunny:
                 this.buffedType = "Fire";
