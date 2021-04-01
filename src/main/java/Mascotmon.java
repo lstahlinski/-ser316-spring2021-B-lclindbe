@@ -39,16 +39,16 @@ public class Mascotmon {
         getDescription();
     }
 
-    public void getStats() {
+    private void getStats() {
         stats = new Stats(name);   
     }
 
-    public void getDescription() {
+    private void getDescription() {
         Description desc = new Description(name);
         this.description = desc.description;
     }
 
-    public void getType() {
+    private void getType() {
         Type t = new Type(name);
         this.type = t.type;
     } 
