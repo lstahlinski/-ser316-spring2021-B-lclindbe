@@ -43,6 +43,5 @@ public class Stats {
                 defense = 50;
                 health = 100;
         }
-
     }
 }

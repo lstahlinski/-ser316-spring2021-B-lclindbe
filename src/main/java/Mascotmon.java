@@ -97,6 +97,7 @@ public class Mascotmon {
                 } else if (chosenAttackNumber == 3) {
                     desc = " uses Aqua Cannon";
                     attack = new Attack(stats.attack, "Water");
+                    stats.attack *= 1.2;
                 }
                 break;
             case RALPHIE:
