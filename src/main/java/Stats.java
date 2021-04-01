@@ -4,12 +4,18 @@ public class Stats {
     double defense;
     double health;
 
+    /**
+     * Base Stats.
+     */
     public Stats() {
         attack = 50;
         defense = 50;
         health = 100;
     }
 
+    /**
+     * Specifc stats for each monster.
+     */
     public Stats(Mascotmon.Name name) {
         switch (name) {
             case ALBERT:
@@ -32,6 +38,10 @@ public class Stats {
                 defense = 40;
                 health = 110;
                 break;
+            default:
+                attack = 50;
+                defense = 50;
+                health = 100;
         }
 
     }
