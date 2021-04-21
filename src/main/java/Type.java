@@ -25,4 +25,8 @@ public class Type {
         }
     }
 
+    public enum MonsterType {
+        Water, Ground, Fire, Normal
+    }
+
 }

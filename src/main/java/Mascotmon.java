@@ -80,9 +80,21 @@ public class Mascotmon {
      
         String desc = "";
         Attack attack = null;
-  
-        switch (name) {
-            case ALBERT:
+        if (name.equals("ALBERT")) {
+            type = "Water";
+        } else if (name.equals("RALPHIE")) {
+            type = "Ground";
+
+        } else if (name.equals("SPARKY")) {
+            type = "Fire";
+        } else if (name.equals("BULLY")) {
+            type = "Normal";
+        } else {
+            type = "Normal";
+        }
+
+        switch (type) {
+            case "Water":
                 this.getType();
                 if (chosenAttackNumber == 0) {
                     desc = " uses Iron Scales, increasing defense stat by 10%";
@@ -100,7 +112,7 @@ public class Mascotmon {
                     stats.attack *= 1.2;
                 }
                 break;
-            case RALPHIE:
+            case "Ground":
                 this.getType();
                 if (chosenAttackNumber == 0) {
                     desc = " uses Iron Hide, increasing defense stat by 10%";
@@ -117,7 +129,7 @@ public class Mascotmon {
                     attack = new Attack(stats.attack, "Fire");
                 }
                 break;
-            case SPARKY:
+            case "Fire":
                 this.getType();
                 if (chosenAttackNumber == 0) {
                     desc = " uses Heat Up, increasing attack stat by 10%";
@@ -134,7 +146,7 @@ public class Mascotmon {
                     attack = new Attack(stats.attack, "Ground");
                 }
                 break;
-            case BULLY:
+            case "Normal":
                 this.getType();
                 if (chosenAttackNumber == 0) {
                     desc = " uses Sleep, increasing health stat by 10%";
@@ -161,4 +173,6 @@ public class Mascotmon {
     public enum Name {
         ALBERT, RALPHIE, SPARKY, BULLY
     }
+
+
 }
