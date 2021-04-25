@@ -91,14 +91,16 @@ public class BattleScenario {
         while (true) {
             fightRound(mon1, mon2, round, choosenAttackNumber1, choosenAttackNumber2, randomAttack);
 
+            if (mon2.stats.health <= 0.0) {
+                System.out.println(mon2.name + " has fainted in round " + round);
+                return mon1;
+            }
+
             fightRound(mon2, mon1, round, choosenAttackNumber1, choosenAttackNumber2, randomAttack);
 
             if (mon2.stats.health <= 0.0) {
                 System.out.println(mon2.name + " has fainted in round " + round);
                 return mon1;
-            } else if (mon1.stats.health <= 0.0) {
-                System.out.println(mon1.name + " has fainted in round " + round);
-                return mon2;
             }
              
             round++;
