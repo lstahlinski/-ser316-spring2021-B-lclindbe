@@ -30,6 +30,7 @@ repositories {
 
 test {
     exclude '**/GivenBlackBox.class'
+    exclude '**/GivenWhiteBox.class'
 }
 
 apply plugin: "pmd"
